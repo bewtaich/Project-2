@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { BlogPosts } = require('../models');
+const { BlogPosts } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (res, rep)=> {
@@ -15,25 +15,25 @@ router.post('/', withAuth, async (res, rep)=> {
 
 });
 
-router.delete('/:id', withAuth, async (req, res) => {
-    try {
-      const blogPostData = await BlogPosts.destroy({
-        where: {
-          id: req.params.id,
-          user_id: req.session.user_id,
-        },
-      });
+// router.delete('/:id', withAuth, async (req, res) => {
+//     try {
+//       const blogPostData = await BlogPosts.destroy({
+//         where: {
+//           id: req.params.id,
+//           user_id: req.session.user_id,
+//         },
+//       });
   
-      if (!blogPostData) {
-        res.status(404).json({ message: 'No BlogPost found with this id!' });
-        return;
-      }
+//       if (!blogPostData) {
+//         res.status(404).json({ message: 'No BlogPost found with this id!' });
+//         return;
+//       }
   
-      res.status(200).json(blogPostData);
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
+//       res.status(200).json(blogPostData);
+//     } catch (err) {
+//       res.status(500).json(err);
+//     }
+//   });
   
   module.exports = router;
   
