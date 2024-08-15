@@ -29,14 +29,15 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-          
+        
+          {{#if logged_in}}
         {{! Profile Button }}
         <button
           class="btn btn-outline-primary mx-2"
           id="profile"
           type="button"
         >Profile</button>
-
+        {{/if}}
         {{! Logo }}
         <a class="navbar-brand mx-2" id="home" href="#">
           <img
