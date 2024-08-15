@@ -30,18 +30,11 @@ router.get('/login', (req, res) => {
 
 module.exports = router;
 
-router.get('/profile/:id', async (req, res) => {
+router.get('/profile/:username', async (req, res) => {
   try {
-    const blogPostData = await BlogPosts.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['username'],
-        },
-      ],
-    });
-
-    const blogPost = blogPostData.get({ plain: true });
+    const blogPostData = await BlogPosts.findByPk(req.params.username, {});
+    console.log(blogPostData);
+    const blogPost = blogPostData.map((post) => blogPostData.get({ plain: true }));
 
     res.render('profile', {
       ...blogPost,
