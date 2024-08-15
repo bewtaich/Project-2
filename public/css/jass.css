@@ -1,0 +1,25 @@
+.logincontainer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.card {
+    width: 40% !important;
+    display: inline-flex;
+    height: 450px;
+}
+
+.card-body {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    display: block;
+    font-weight: 500;
+}
+
+.signup, .loginbtn {
+    margin: 7px;
+}
