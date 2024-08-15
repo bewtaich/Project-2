@@ -1,14 +1,13 @@
 const newFormHandler = async (event) => {
     event.preventDefault();
   
-    const name = document.querySelector('#blog-name').value.trim();
     const title = document.querySelector('#blog-title').value.trim();
     const description = document.querySelector('#blog-description').value.trim();
   
-    if (name && tilte && description) {
+    if (title && description) {
       const response = await fetch(`/api/blogRoutes`, {
         method: 'POST',
-        body: JSON.stringify({ name, title, description }),
+        body: JSON.stringify({title, description }),
         headers: {
           'Content-Type': 'application/json',
         },
@@ -42,7 +41,7 @@ const newFormHandler = async (event) => {
     .querySelector('.new-blog-form')
     .addEventListener('submit', newFormHandler);
   
-  document
-    .querySelector('.project-list')
-    .addEventListener('click', delButtonHandler);
+//   document
+//     .querySelector('.project-list')
+//     .addEventListener('click', delButtonHandler);
   
