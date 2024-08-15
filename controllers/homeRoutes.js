@@ -4,7 +4,7 @@ const withAuth = require('../utils/auth');
 const { BlogPosts } = require('../models')
 
 // Prevent non logged in users from viewing the homepage
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const blogPosts = await BlogPosts.findAll({
     });
@@ -15,7 +15,9 @@ router.get('/', withAuth, async (req, res) => {
       posts, //making data available to use in handlebars homepage file. 
 
       // Pass the logged in flag to the template
-      logged_in: req.session.logged_in, //giving to handlebars the user's logged in status. 
+      logged_out: !req.session.logged_in,
+      logged_in: req.session.logged_in,
+       //giving to handlebars the user's logged in status. 
     });
   } catch (err) {
     res.status(500).json(err);
@@ -23,12 +25,6 @@ router.get('/', withAuth, async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  // If a session exists, redirect the request to the homepage
-  if (req.session.logged_in) {
-    res.redirect('/');
-    return;
-  }
-
   res.render('login');
 });
 
