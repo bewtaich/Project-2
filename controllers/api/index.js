@@ -3,5 +3,5 @@ const userRoutes = require('./userRoutes');
 const blogRoutes = require('./blogRoutes');
 
 router.use('/users', userRoutes);
-router.use('/BlogPosts', blogRoutes);
+router.use('/upload', blogRoutes);
 module.exports = router;
