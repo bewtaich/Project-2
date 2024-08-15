@@ -28,19 +28,13 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-module.exports = router;
-
-router.get('/profile/:id', async (req, res) => {
+router.get('/profile', async (req, res) => {
   try {
-    const blogPostData = await BlogPosts.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['username'],
-        },
-      ],
+    const blogPostData = await User.findByPk(req.session.user_id, {
+      include: [{ model: BlogPosts }],
     });
-
+    
+    console.log(blogPostData);
     const blogPost = blogPostData.get({ plain: true });
 
     res.render('profile', {
@@ -51,3 +45,5 @@ router.get('/profile/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+module.exports = router;
