@@ -22,6 +22,7 @@
 }
 
 label {
+    color:black;
     display: block;
     font-weight: 500;
 }
@@ -53,7 +54,7 @@ html {
 
 body {
     background: rgb(120,101,136);
-    background: radial-gradient(circle, rgba(120,101,136,1) 0%, rgba(48,30,85,1) 100%);
+    background: radial-gradient(circle, rgba(120,101,136,1) 0%, rgba(60,30,85,1) 100%);
     font-weight: bolder;
 }
 
@@ -101,3 +102,4 @@ body {
 #blog-description {
     height: 200;
 }
+
