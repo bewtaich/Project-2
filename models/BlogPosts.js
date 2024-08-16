@@ -41,7 +41,7 @@ BlogPosts.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'BlogPosts',
+    modelName: 'BlogPosts', //This is how the model will be spelled in the database.
   }
 );
 
