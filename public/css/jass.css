@@ -8,15 +8,21 @@
     width: 40% !important;
     display: inline-flex;
     height: 450px;
+    color:black;
 }
 
-.card-body {
+.loginbody {
     display:flex;
     flex-direction: column;
     align-items: center;
 }
 
+.loginheader {
+    color:black;
+}
+
 label {
+    color:black;
     display: block;
     font-weight: 500;
 }
@@ -88,6 +94,10 @@ body {
 
 .blogpost {
     color: white;
+}
+
+#blog-title {
+    color: black;
 }
 
 #blog-description {
