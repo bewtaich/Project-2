@@ -1,3 +1,35 @@
+
+.logincontainer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.card {
+    width: 40% !important;
+    display: inline-flex;
+    height: 450px;
+    color:black;
+}
+
+.loginbody {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginheader {
+    color:black;
+}
+
+label {
+    color:black;
+    display: block;
+    font-weight: 500;
+}
+
+.signup, .loginbtn {
+    margin: 7px;
+}
 * {
     color: white;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
@@ -11,28 +43,6 @@
     --light-text: white;
     --dark-text: #301e55;
 }
-
-.card {
-    width: 40% !important;
-    display: inline-flex;
-    height: 450px;
-}
-
-.card-body {
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-label {
-    display: block;
-    font-weight: 500;
-}
-
-.signup, .loginbtn {
-    margin: 7px;
-}
-
 
 html {
     line-height: 1.15;
@@ -92,5 +102,4 @@ body {
 
 #blog-description {
     height: 200;
-    color: black;
 }

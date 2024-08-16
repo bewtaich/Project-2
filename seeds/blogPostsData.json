@@ -3,4 +3,10 @@
   "body":"lorem ipsum slfjdslkfjk sd",
   "username": "Lernantino",
   "user_id": 1
+},
+ { 
+  "title":"Test Title 2",
+  "body":"This is different",
+  "username": "Sale",
+  "user_id": 2
 }]
