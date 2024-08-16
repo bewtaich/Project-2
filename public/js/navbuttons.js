@@ -1,9 +1,6 @@
- const home = async (event) => {
-     event.preventDefault();
-     document.location.replace('/')
-   }
 
-const profile = async (event) => {
+
+const profile = async (event, req) => {
     event.preventDefault();
     document.location.replace('/profile')
 }
