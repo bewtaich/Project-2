@@ -46,7 +46,7 @@ body {
 }
 
 .navbar {
-    background-color: var(--outline-color);
+    background-color: white;
     color: var(--dark-text);
     flex-wrap: nowrap;
     align-items: baseline;
