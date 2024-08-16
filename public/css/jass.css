@@ -1,9 +1,17 @@
-
-.logincontainer {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+* {
+    color: white;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
+
+:root {
+    --main-bg-color: #301e55;
+    --accent-color: #0ea64e;
+    --highlight-color: #786588;
+    --outline-color: #d1e6f3;
+    --light-text: white;
+    --dark-text: #301e55;
+}
+
 .card {
     width: 40% !important;
     display: inline-flex;
@@ -24,19 +32,7 @@ label {
 .signup, .loginbtn {
     margin: 7px;
 }
-* {
-    color: white;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
-}
 
-:root {
-    --main-bg-color: #301e55;
-    --accent-color: #0ea64e;
-    --highlight-color: #786588;
-    --outline-color: #d1e6f3;
-    --light-text: white;
-    --dark-text: #301e55;
-}
 
 html {
     line-height: 1.15;
@@ -50,7 +46,7 @@ body {
 }
 
 .navbar {
-    background-color: white;
+    background-color: var(--outline-color);
     color: var(--dark-text);
     flex-wrap: nowrap;
     align-items: baseline;
@@ -90,6 +86,11 @@ body {
     color: white;
 }
 
+#blog-title {
+    color: black;
+}
+
 #blog-description {
     height: 200;
+    color: black;
 }
