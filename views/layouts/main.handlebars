@@ -45,13 +45,37 @@
           />
         </a>
 
-      {{#if logged_in}}
+        {{#if logged_in}}
+          {{! Profile Avatar }}
+          <a class="navbar-brand mx-2" id="avatar-img" href="#">
+            <img
+              src="/data/uploads/{{avatarname}}"
+              width="50"
+              height="50"
+              alt=""
+            />
+          </a>
+        {{/if}}  
+
+        {{#if onProfilePage}}
+          {{! Avatar Upload Form }}
+          <form action="/api/users/upload" enctype="multipart/form-data" method="post">
+            <div class="form-group">
+              <input type="file" class="form-control-file" name="uploaded_file">
+              <input type="submit" value="Upload" class="btn btn-default">
+            </div>
+          </form>
+        {{/if}}
+
+        {{#if onHomePage}}
+        {{#if logged_in}}
         {{! Profile Button }}
-        <button
-          class="light-btn mx-2"
-          id="profile"
-          type="button"
-        >Profile</button>
+          <button
+            class="light-btn mx-2"
+            id="profile"
+            type="button"
+          >Profile</button>
+        {{/if}}
         {{/if}}
 
         {{! Search Bar }}
@@ -63,10 +87,10 @@
             aria-label="Search">
         </form>
         
-        
         {{! Create Post Button }}
-        <button class="btn btn-success btn-lg text-white mx-2 nav-item" ><b
-          >+</b></button>
+        {{#if logged_in}}
+          <button class="btn btn-success btn-lg text-white mx-2 nav-item" ><b>+</b></button>
+        {{/if}}  
 
         {{! Login/Logout Button }}
         {{#if logged_in}}
@@ -74,9 +98,7 @@
             class="btn btn-outline-danger mx-2"
             id="logout"
           >Logout</button>
-        {{/if}}
-
-        {{#if logged_out}}
+        {{else}}
           <button class="btn btn-outline-success mx-2" id="login">Login</button>
         {{/if}}
       </nav>
@@ -92,8 +114,7 @@
     <!-- Only include the logout script if the user is logged in -->
     {{#if logged_in}}
       <script src="/js/logout.js"></script>
-    {{/if}}
-    {{#if logged_out}}
+    {{else}}
       <script src="/js/loginbutton.js"></script>
     {{/if}}
     <script src="/js/navbuttons.js"></script>

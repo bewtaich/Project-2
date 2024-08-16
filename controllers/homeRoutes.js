@@ -24,8 +24,7 @@ router.get("/", async (req, res) => {
       logged_out: !req.session.logged_in,
       logged_in: req.session.logged_in,
       //giving to handlebars the user's logged in status.
-
-      // user, 
+      onHomePage: true
     });
   } catch (err) {
     res.status(500).json(err);
@@ -47,7 +46,8 @@ router.get('/profile', async (req, res) => {
     console.log(blogPost);
     res.render('profile', {
       ...blogPost,
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,
+      onProfilePage: true
     });
   } catch (err) {
     res.status(500).json(err);
