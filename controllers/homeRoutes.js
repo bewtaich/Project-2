@@ -6,9 +6,16 @@ const { BlogPosts } = require("../models");
 // Prevent non logged in users from viewing the homepage
 router.get("/", async (req, res) => {
   try {
-    const blogPosts = await BlogPosts.findAll({});
+    const blogPosts = await BlogPosts.findAll({
+      // include: user, 
+      // attributes: [{username}]
+      
+    });
 
     const posts = blogPosts.map((post) => post.get({ plain: true })); //making database data useful for front end.
+    // const userData = await User.findAll({});
+    // const user = userData.map((user) => user.get({plain:true}));
+
 
     res.render("homepage", {
       posts, //making data available to use in handlebars homepage file.
@@ -17,6 +24,8 @@ router.get("/", async (req, res) => {
       logged_out: !req.session.logged_in,
       logged_in: req.session.logged_in,
       //giving to handlebars the user's logged in status.
+
+      // user, 
     });
   } catch (err) {
     res.status(500).json(err);

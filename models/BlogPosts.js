@@ -21,13 +21,20 @@ BlogPosts.init(
     user_id: {
       type: DataTypes.INTEGER,
       allowNull:false,
+      unique: true,
       references: {
         model: 'user',
         key: 'id',
-      },
+      },},
+    author_username : {
+    type: DataTypes.STRING,
+    allowNull:false,
+      references: {
+        model:'user',
+        key:'username'
+      }
 
     }
-
   },
   // {
   //   hooks: {
