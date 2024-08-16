@@ -27,7 +27,7 @@ label {
     font-weight: 500;
 }
 
-.signup, .loginbtn {
+.signup, .loginbtn, #create-button-profile,#create-button-home{
     margin: 7px;
 }
 * {
@@ -100,6 +100,24 @@ body {
     color: black;
 }
 
-#blog-description {
-    height: 200;
+#commentButton {
+    height:30px;
 }
+
+#dialog {
+    display: none;
+    color:black;
+}
+
+.ui-widget-header {
+    display:none;
+}
+
+#password-login, #password-signup, #blog-title, #blog-description, .ui-dialog-buttonset > button {
+    color: black;
+}
+
+#logout {
+    background-color: #dc3545;
+}
+
