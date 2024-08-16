@@ -1,4 +1,7 @@
-
+const home = async (event, req) => {
+    event.preventDefault();
+    document.location.replace('/')
+}
 
 const profile = async (event, req) => {
     event.preventDefault();
