@@ -1,14 +1,20 @@
 const router = require("express").Router();
-const { User } = require("../models");
+const { User, Comments } = require("../models");
 const withAuth = require("../utils/auth");
 const { BlogPosts } = require("../models");
 
 // Prevent non logged in users from viewing the homepage
 router.get("/", async (req, res) => {
   try {
-    const blogPosts = await BlogPosts.findAll({});
+    const blogPosts = await BlogPosts.findAll({
+      include: [{model: User}, {model:Comments, include: [{model: User}]}], 
+      // attributes: [{username}]
+      
+    });
 
     const posts = blogPosts.map((post) => post.get({ plain: true })); //making database data useful for front end.
+
+
 
     res.render("homepage", {
       posts, //making data available to use in handlebars homepage file.
