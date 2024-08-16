@@ -1,12 +1,12 @@
 [{
   "title":"Test Title",
   "body":"lorem ipsum slfjdslkfjk sd",
-  "username": "Lernantino",
+  "author_username": "Lernantino",
   "user_id": 1
 },
  { 
   "title":"Test Title 2",
   "body":"This is different",
-  "username": "Sale",
+  "author_username": "Sale",
   "user_id": 2
 }]

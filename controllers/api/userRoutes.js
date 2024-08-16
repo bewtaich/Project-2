@@ -1,5 +1,15 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const multer = require('multer');
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'public/data/uploads/')
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname)
+  }
+});
+const upload = multer({storage: storage});
 
 router.post('/', async (req, res) => {
   try {
@@ -14,6 +24,18 @@ router.post('/', async (req, res) => {
   } catch (err) {
     res.status(400).json(err);
   }
+});
+
+router.post('/upload', upload.any(), async (req, res) => {
+  console.log('file', req.files[0]);
+  await User.update({
+    avatarname: req.files[0].filename
+  },
+  {
+    where:{id:req.session.user_id}
+  }
+)
+  res.redirect('/profile');
 });
 
 router.post('/login', async (req, res) => {

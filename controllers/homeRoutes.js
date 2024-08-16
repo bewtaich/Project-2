@@ -1,14 +1,20 @@
 const router = require("express").Router();
-const { User } = require("../models");
+const { User, Comments } = require("../models");
 const withAuth = require("../utils/auth");
 const { BlogPosts } = require("../models");
 
 // Prevent non logged in users from viewing the homepage
 router.get("/", async (req, res) => {
   try {
-    const blogPosts = await BlogPosts.findAll({});
+    const blogPosts = await BlogPosts.findAll({
+      include: [{model: User}, {model:Comments, include: [{model: User}]}], 
+      // attributes: [{username}]
+      
+    });
 
     const posts = blogPosts.map((post) => post.get({ plain: true })); //making database data useful for front end.
+
+
 
     res.render("homepage", {
       posts, //making data available to use in handlebars homepage file.
@@ -17,6 +23,7 @@ router.get("/", async (req, res) => {
       logged_out: !req.session.logged_in,
       logged_in: req.session.logged_in,
       //giving to handlebars the user's logged in status.
+      onHomePage: true
     });
   } catch (err) {
     res.status(500).json(err);
@@ -38,7 +45,8 @@ router.get('/profile', async (req, res) => {
     console.log(blogPost);
     res.render('profile', {
       ...blogPost,
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,
+      onProfilePage: true
     });
   } catch (err) {
     res.status(500).json(err);
