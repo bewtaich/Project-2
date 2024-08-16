@@ -17,6 +17,7 @@ router.get("/", async (req, res) => {
       logged_out: !req.session.logged_in,
       logged_in: req.session.logged_in,
       //giving to handlebars the user's logged in status.
+      onHomePage: true
     });
   } catch (err) {
     res.status(500).json(err);

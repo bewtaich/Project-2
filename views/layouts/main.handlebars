@@ -49,7 +49,7 @@
           {{! Profile Avatar }}
           <a class="navbar-brand mx-2" id="avatar-img" href="#">
             <img
-              src="https://img.logoipsum.com/332.svg"
+              src="/data/uploads/{{avatarname}}"
               width="50"
               height="50"
               alt=""
@@ -59,7 +59,7 @@
 
         {{#if onProfilePage}}
           {{! Avatar Upload Form }}
-          <form action="/profile" enctype="multipart/form-data" method="post">
+          <form action="/api/users/upload" enctype="multipart/form-data" method="post">
             <div class="form-group">
               <input type="file" class="form-control-file" name="uploaded_file">
               <input type="submit" value="Upload" class="btn btn-default">
@@ -67,6 +67,7 @@
           </form>
         {{/if}}
 
+        {{#if onHomePage}}
         {{#if logged_in}}
         {{! Profile Button }}
           <button
@@ -74,6 +75,7 @@
             id="profile"
             type="button"
           >Profile</button>
+        {{/if}}
         {{/if}}
 
         {{! Search Bar }}
