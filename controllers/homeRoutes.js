@@ -34,9 +34,9 @@ router.get('/profile', async (req, res) => {
       include: [{ model: BlogPosts }],
     });
     
-    console.log(blogPostData);
+    
     const blogPost = blogPostData.get({ plain: true });
-
+    console.log(blogPost);
     res.render('profile', {
       ...blogPost,
       logged_in: req.session.logged_in
