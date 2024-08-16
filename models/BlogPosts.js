@@ -26,16 +26,8 @@ BlogPosts.init(
         model: 'user',
         key: 'id',
       },},
-    author_username : {
-    type: DataTypes.STRING,
-    allowNull:false,
-      references: {
-        model:'user',
-        key:'username'
-      }
 
-    }
-  },
+    },
   // {
   //   hooks: {
   //     beforeCreate: async (newUserData) => {

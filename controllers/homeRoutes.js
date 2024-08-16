@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../models");
+const { User, Comments } = require("../models");
 const withAuth = require("../utils/auth");
 const { BlogPosts } = require("../models");
 
@@ -7,14 +7,13 @@ const { BlogPosts } = require("../models");
 router.get("/", async (req, res) => {
   try {
     const blogPosts = await BlogPosts.findAll({
-      // include: user, 
+      include: [{model: User}, {model:Comments, include: [{model: User}]}], 
       // attributes: [{username}]
       
     });
 
     const posts = blogPosts.map((post) => post.get({ plain: true })); //making database data useful for front end.
-    // const userData = await User.findAll({});
-    // const user = userData.map((user) => user.get({plain:true}));
+
 
 
     res.render("homepage", {
