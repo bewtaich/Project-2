@@ -27,22 +27,22 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-router.get("/profile", async (req, res) => {
-    try {
-      const blogPostData = await User.findByPk(req.session.user_id, {
-        include: [{ model: BlogPosts }],
-      });
-
-      console.log(blogPostData);
-      const blogPost = blogPostData.get({ plain: true });
-
-      res.render("profile", {
-        ...blogPost,
-        logged_in: req.session.logged_in,
-      });
-    } catch (err) {
-      res.status(500).json(err);
-    }
+router.get('/profile', async (req, res) => {
+  try {
+    const blogPostData = await User.findByPk(req.session.user_id, {
+      include: [{ model: BlogPosts }],
+    });
+    
+    
+    const blogPost = blogPostData.get({ plain: true });
+    console.log(blogPost);
+    res.render('profile', {
+      ...blogPost,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;
