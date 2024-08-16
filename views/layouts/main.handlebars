@@ -49,14 +49,14 @@
             aria-label="Search">
         </form>
         
-        
+        {{#if logged_in}}
         {{! Create Post Button }}
         <button class="btn btn-success btn-lg text-white mx-2 nav-item" id="postButton" ><b
           >+</b></button>
         
 
         {{! Login/Logout Button }}
-        {{#if logged_in}}
+        
           <button
             class="btn btn-outline-danger mx-2"
             id="logout"
