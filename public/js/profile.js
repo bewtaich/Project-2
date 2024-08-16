@@ -12,12 +12,12 @@ const newFormHandler = async (event) => {
           'Content-Type': 'application/json',
         },
       });
-  
-      if (response.ok) {
+
+        if (response.ok) {
         document.location.replace('/profile');
-      } else {
+        } else {
         alert('Failed to create project');
-      }
+        }
     }
   };
   
@@ -44,4 +44,3 @@ const newFormHandler = async (event) => {
 //   document
 //     .querySelector('.project-list')
 //     .addEventListener('click', delButtonHandler);
-  
