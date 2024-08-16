@@ -10,12 +10,13 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="/public/css/reset.css" />
     <link rel="stylesheet" href="/css/jass.css" />
   </head>
 
   <body>
     <header class="display-flex align-center">
-      <nav class="navbar navbar-light bg-light p-3">
+      <nav class="navbar p-3">
         {{! Hamburger }}
 
         <button
@@ -30,13 +31,6 @@
           <span class="navbar-toggler-icon"></span>
         </button>
           
-        {{! Profile Button }}
-        <button
-          class="btn btn-outline-primary mx-2"
-          id="profile"
-          type="button"
-        >Profile</button>
-
         {{! Logo }}
         <a class="navbar-brand mx-2" id="home" href="#">
           <img
@@ -46,6 +40,14 @@
             height="50"
           />
         </a>
+
+        {{! Profile Button }}
+        <button
+          class="light-btn mx-2"
+          id="profile"
+          type="button"
+        >Profile</button>
+
         {{! Search Bar }}
         <form class="nav-item">
           <input
@@ -57,7 +59,7 @@
         </form>
 
         {{! Create Post Button }}
-        <button class="btn btn-success btn-lg text-white mx-2 nav-item"><b
+        <button class="btn btn-success btn-lg text-white mx-2 nav-item" ><b
           >+</b></button>
 
         {{! Login/Logout Button }}
