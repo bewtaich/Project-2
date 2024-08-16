@@ -1,0 +1,69 @@
+* {
+    color: white;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+:root {
+    --main-bg-color: #301e55;
+    --accent-color: #0ea64e;
+    --highlight-color: #786588;
+    --outline-color: #d1e6f3;
+    --light-text: white;
+    --dark-text: #301e55;
+}
+
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+} /*Consistent line height in all browsers, prevent font size changes after screen orientation change */
+
+body {
+    background: rgb(120,101,136);
+    background: radial-gradient(circle, rgba(120,101,136,1) 0%, rgba(48,30,85,1) 100%);
+    font-weight: bolder;
+}
+
+.navbar {
+    background-color: white;
+    color: var(--dark-text);
+    flex-wrap: nowrap;
+    align-items: baseline;
+}
+
+.form-control {
+    border-radius: 20px;
+    border: 5px solid var(--highlight-color);
+}
+
+.form-input {
+    border-radius: 20px;
+    border: 3px solid var(--highlight-color);
+    width: 100%;
+}
+
+.btn {
+    background-color: var(--accent-color);
+    color: var(--light-text);
+    border: 3px solid var(--main-bg-color);
+    border-radius: 30px;
+
+}
+
+.light-btn {
+    background-color: var(--light-text);
+    color: var(--dark-text);
+    border: 5px solid var(--main-bg-color);
+    border-radius: 30px;
+}
+
+.row {
+    justify-content: flex-start;
+}
+
+.blogpost {
+    color: white;
+}
+
+#blog-description {
+    height: 200;
+}
