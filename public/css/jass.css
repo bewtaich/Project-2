@@ -4,14 +4,14 @@
     justify-content: space-around;
     flex-wrap: wrap;
 }
-.card {
+.logincard {
     width: 40% !important;
     display: inline-flex;
     height: 450px;
     color:black;
 }
 
-.card-body {
+.loginbody {
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -103,3 +103,6 @@ body {
     height: 200;
 }
 
+#commentButton {
+    height:30px;
+}
