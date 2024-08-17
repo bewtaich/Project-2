@@ -1,5 +1,14 @@
-{
+[{
   "body": "I agree with this post",
   "user_id": 2,
   "blog_id":1
-}
+},{
+  "body": "I agree with this post sfd dsfdsfsds",
+  "user_id": 1,
+  "blog_id":2
+},
+{
+  "body": "testing ",
+  "user_id": 3,
+  "blog_id":1
+}]
