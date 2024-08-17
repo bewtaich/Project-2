@@ -1,8 +1,8 @@
-const commentButton = document.getElementById('commentButton');
+
 
 $(document).ready(function () {
   const dialog =
-$("#dialog").dialog({
+$("#comments-dialog").dialog({
   autoOpen: false,
   modal: true,
   minHeight:0.5*(window.innerHeight),
@@ -16,7 +16,21 @@ $("#dialog").dialog({
     }
   }
   })
-  $('#commentButton').on("click", function (){
+  $('.commentButtons').on("click", function (){
     dialog.dialog("open")
   })
 });
+
+const comments = async (event, req) => {
+  event.preventDefault();
+  // document.location.replace('/')
+}
+
+
+const commentButton = document.querySelectorAll('.commentButtons')
+
+// Loop through each button and add a click event listener
+commentButton.forEach(commentButton => {
+    commentButton.addEventListener('click', comments);
+    });
+
