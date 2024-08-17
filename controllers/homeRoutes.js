@@ -1,7 +1,8 @@
 const router = require("express").Router();
-const { User, Comments } = require("../models");
+const { User} = require("../models");
 const withAuth = require("../utils/auth");
 const { BlogPosts } = require("../models");
+const { Comments } = require("../models");
 
 // Prevent non logged in users from viewing the homepage
 router.get("/", async (req, res) => {
@@ -15,6 +16,7 @@ router.get("/", async (req, res) => {
     
     const posts = blogPosts.map((post) => post.get({ plain: true })); //making database data useful for front end.
     console.log(posts);
+    console.log(posts[1].Comments);
     // const posts2 = posts.map((comment) => comment.get({}));
 
 
