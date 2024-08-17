@@ -4,7 +4,7 @@ const { BlogPosts } = require('../../models');
 const { Comments } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-
+// /api/sub
 router.post('/', withAuth, async (req, res) => {
   try {
     console.log(req.body);
@@ -19,7 +19,7 @@ router.post('/', withAuth, async (req, res) => {
   }
   
 });
-
+// api/commment
 router.get('/comment', withAuth, async (req,res) => {
   try {
     const commentData = await BlogPosts.findByPk(req.session.blog_id, {

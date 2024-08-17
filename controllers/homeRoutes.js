@@ -11,9 +11,11 @@ router.get("/", async (req, res) => {
       // attributes: [{username}]
       
     });
-
+    // console.log(blogPosts);
+    
     const posts = blogPosts.map((post) => post.get({ plain: true })); //making database data useful for front end.
-
+    console.log(posts);
+    // const posts2 = posts.map((comment) => comment.get({}));
 
 
     res.render("homepage", {
