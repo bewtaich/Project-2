@@ -10,27 +10,27 @@ class Comments extends Model {
 
 Comments.init(
   {
-     body:{
-      type:DataTypes.STRING,
-      allowNull:false
+    body: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
     user_id: {
       type: DataTypes.INTEGER,
-      allowNull:false,
+      allowNull: false,
+      unique: true,
       references: {
         model: 'user',
         key: 'id',
       },
-      blog_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'BlogPosts',
-            key: 'id',
-        }
-      }
-
-    }
+    },
+    blog_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'BlogPosts',
+        key: 'id',
+      },
+    },
 
   },
   // {

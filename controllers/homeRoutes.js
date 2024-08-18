@@ -10,19 +10,21 @@ router.get("/", async (req, res) => {
     const blogPosts = await BlogPosts.findAll({
       include: [{model: User}, {model:Comments, include: [{model: User}]}], 
       // attributes: [{username}]
-      
     });
     // console.log(blogPosts);
     
+    
     const posts = blogPosts.map((post) => post.get({ plain: true })); //making database data useful for front end.
+    const allComments= posts.map((post) => post.Comments);
+    console.log(allComments);
     console.log(posts);
-    console.log(posts[1].Comments);
+    console.log(posts[0].Comments);
     // const posts2 = posts.map((comment) => comment.get({}));
 
 
     res.render("homepage", {
       posts, //making data available to use in handlebars homepage file.
-
+ 
       // Pass the logged in flag to the template
       logged_out: !req.session.logged_in,
       logged_in: req.session.logged_in,
