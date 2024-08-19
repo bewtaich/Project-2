@@ -1,6 +1,9 @@
 # BlogSpace
 
-Application description
+For this project, the user is presented with a landing page containing a navigation bar and a list of blog posts created by other users. The user can choose to signup login and access more features. Once an account is signed up or logged in, the user is directed to a modified landing page with more features, including the option to add comments to existing blog posts. The user can also navigate to a profile page containing their own blog posts, as well as an option to upload a personal profile picture.
+
+The intent of this application is to provide a place for developers and writers to communicate with each other and share ideas.
+
 
 ##User Story
 
@@ -34,20 +37,32 @@ When I click the logout button, I am signed out of my page and redirected to the
 
 ##Screenshots
 
+###Coming Soon!
 
 
 ##Deployment
 
 [BlogSpace]()
 
-Walkthrough using the application.
+The application homepage contains a navigation bar and a list of blog posts created by other users. The user is not yet logged in, and some features will not be available at this time. To access more features, the user can click on the 'login' button, which will take them to the login page where both a login form and a signup form exist.
+
+Completing the signup form will create a new user model in the database and automatically login the user. Alternatively, existing users can complete the login form. Either option will redirect the user to the homepage with access to all available features.
+
+A comment button below the body of each blog post, once clicked, opens a comment form which appends a comment to the relative blog post when submitted. In the navigation bar, there is a new 'Profile' button which will redirect the user to their own profile page. 
+
+On the profile page, the user can find a form in the navigation bar where they can upload an image file. Once submitted, the image file will appear in the navigation bar as a profile picture. There is also a 'Blog Post' form in the body of the page. Once submitted, A new blog is generated at the top of a list just below the form. All blogs created by the user appear on this portion of the page.
+
+A logout button also exists in the navigation bar, and if the user wants to return to the homepage, clicking on the app icon will redirect them.
+
+
 
 ##Authors
 
 Brian Taich
 Chris Moore
 Jarvis Washington
-Will
+Will (No last name given)
+
 
 ##License
 
@@ -72,6 +87,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
 
 ##Acknowledgements
 
