@@ -21,23 +21,23 @@ router.post('/:id', withAuth, async (req, res) => {
   }
   
 });
-// api/commment
-router.get('/comment', withAuth, async (req,res) => {
-  try {
-    const commentData = await BlogPosts.findByPk(req.session.blog_id, {
-      include: [{model: Comments}, {model: User}],
-    });
+// // api/commment
+// router.get('/comment', withAuth, async (req,res) => {
+//   try {
+//     const commentData = await BlogPosts.findByPk(req.session.blog_id, {
+//       include: [{model: Comments}, {model: User}],
+//     });
 
 
-    const comments = commentData.get({plain: true});
-    console.log(comments);
-    res.render('comment', {
-      ...comments,
-      logged_in:req.session.logged_in
-    });
-  } catch (err){
-    res.status(500).json(err);
-  }
-})
+//     const comments = commentData.get({plain: true});
+//     console.log(comments);
+//     res.render('comment', {
+//       ...comments,
+//       logged_in:req.session.logged_in
+//     });
+//   } catch (err){
+//     res.status(500).json(err);
+//   }
+// })
 
 module.exports = router;

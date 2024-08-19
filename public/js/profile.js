@@ -1,3 +1,4 @@
+
 const newFormHandler = async (event) => {
   event.preventDefault();
 
@@ -23,10 +24,10 @@ const newFormHandler = async (event) => {
 
 const newCommentHandler = async (event) => {
   event.preventDefault();
-  console.log(event);
- 
+  const id = localStorage.getItem(`comment_id`);
+  const body = document.querySelector('#comment-description').value.trim();
 
-
+  console.log(id)
     if (body && id) {
       const response = await fetch(`/api/sub/${id}`, {
         method: 'POST',
@@ -37,7 +38,7 @@ const newCommentHandler = async (event) => {
       });
 
       if (response.ok) {
-        document.location.replace('/profile');
+        document.location.replace('/');
       } else {
         alert('Failed to create project');
       }
