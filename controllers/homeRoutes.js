@@ -8,7 +8,7 @@ const { Comments } = require("../models");
 router.get("/", async (req, res) => {
   try {
     const blogPosts = await BlogPosts.findAll({
-      include: [{model: User}, {model:Comments, include: [{model: User}]}], 
+      include: [{model: User}, {model:Comments, include: {model: User}}]
       // attributes: [{username}]
       
     });
@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
     console.log(posts);
     console.log(posts[1].Comments);
     // const posts2 = posts.map((comment) => comment.get({}));
-
+    
 
     res.render("homepage", {
       posts, //making data available to use in handlebars homepage file.
