@@ -11,8 +11,7 @@
   <div class="card-body l-3 px-3">
     <p style="color:#000000;">{{blogPostData.body}}</p>
     
-
-    <button class="btn-outline-secondary rounded"><img src="/data/uploads/comment.png" id="commentButton" class="commentButtons"></button>
+    <button class="btn-outline-secondary rounded"><img src="/data/uploads/comment.png" data-id="{{blogPostData.id}}" id="commentButton" class="commentButtons"></button>
   </div>
   {{#each Comments as |subComment|}} {{!--Needed to interate through the comments Data. --}}
   <h5 style="color:#000000;">{{subComment.user.username}}</h5>

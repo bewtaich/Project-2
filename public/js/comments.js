@@ -23,6 +23,9 @@ $("#comments-dialog").dialog({
 
 const comments = async (event, req) => {
   event.preventDefault();
+  console.log(event);
+  const id = event.target.getAttribute('data-id');
+  console.log(id);
   // document.location.replace('/')
 }
 
