@@ -1,151 +1,123 @@
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BlogSpace</title>
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="/public/css/reset.css" />
-    <link rel="stylesheet" href="/css/jass.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlogSpace</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/public/css/reset.css" />
+  <link rel="stylesheet" href="/css/jass.css" />
+</head>
 
-  <body>
-    <header class="display-flex align-center">
-      <nav class="navbar p-3 justify-content-between">
-       
+<body>
+  <header class="display-flex align-center">
+    <nav class="navbar p-3 justify-content-between">
 
-          
-        {{! Logo }}
-        <a class="navbar-brand mx-2" id="home" href="#">
-          <img
-            src="/data/uploads/blogspace_icon.png"
-            alt="An icon image"
-            width="50"
-            height="50"
-          />
-        </a>
 
-        {{#if logged_in}}
-          {{! Profile Avatar }}
-          <a class="navbar-brand mx-2" id="avatar-img" href="#">
-            <img
-              src="/data/uploads/{{avatarname}}"
-              width="50"
-              height="50"
-              alt=""
-            />
-          </a>
-        {{/if}}  
 
-        {{#if onProfilePage}}
-          {{! Avatar Upload Form }}
-          <form action="/api/users/upload" enctype="multipart/form-data" method="post">
-            <div class="form-group">
-              <input type="file" class="form-control-file" name="uploaded_file">
-              <input type="submit" value="Upload" class="btn btn-default">
-            </div>
-          </form>
-        {{/if}}
+      {{! Logo }}
+      <a class="navbar-brand mx-2" id="home" href="#">
+        <img src="/data/uploads/blogspace_icon.png" alt="An icon image" width="50" height="50" />
+      </a>
 
-        {{#if onHomePage}}
-        {{#if logged_in}}
-        {{! Profile Button }}
-          <button
-            class="light-btn mx-2"
-            id="profile"
-            type="button"
-          >Profile</button>
-        {{/if}}
-        {{/if}}
+      {{#if logged_in}}
+      {{! Profile Avatar }}
+      <a class="navbar-brand mx-2" id="avatar-img" href="#">
+        <img src="/data/uploads/{{avatarname}}" width="50" height="50" alt="" />
+      </a>
+      {{/if}}
 
-        {{! Search Bar }}
-        <form class="nav-item">
-          <input
-            class="form-control"
-            type="search"
-            placeholder="Search for user"
-            aria-label="Search">
-        </form>
-        
-        {{#if logged_in}}
-        {{! Create Post Button }}
-        <button class="btn btn-success btn-lg text-white mx-2 nav-item" id="postButton" ><b
-          >+</b></button>
-        
+      {{#if onProfilePage}}
+      {{! Avatar Upload Form }}
+      <form action="/api/users/upload" enctype="multipart/form-data" method="post">
+        <div class="form-group">
+          <input type="file" class="form-control-file" name="uploaded_file">
+          <input type="submit" value="Upload" class="btn btn-default">
+        </div>
+      </form>
+      {{/if}}
 
-        {{! Login/Logout Button }}
-        
-          <button
-            class="btn btn-outline-danger mx-2"
-            id="logout"
-          >Logout</button>
-        {{else}}
-          <button class="btn btn-outline-success mx-2" id="login">Login</button>
-        {{/if}}
-      </nav>
-    </header>
-    
-    <main class="container container-fluid mt-5">
-      {{{body}}}
-      {{! this is where homepage.handlebars is going }}
-    </main>
-    <footer>
+      {{#if onHomePage}}
+      {{#if logged_in}}
+      {{! Profile Button }}
+      <button class="light-btn mx-2" id="profile" type="button">Profile</button>
+      {{/if}}
+      {{/if}}
 
-      <div id="dialog" class="ui-dialog">
-        <form class="form new-blog-form">
-      <div class="form-group">
-        <label for="blog-title">Blog Title:</label>
-        <input class="form-input" type="text" id="blog-title" name="blog-title" />
-      </div>
-      <div class="form-group">
-        <label for="blog-description">Body:</label>
-        <textarea class="form-input" id="blog-description" name="blog-description"></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary" id="create-button-home">Create</button>
-      </div>
-    </form>       
-      </div>
+      {{! Search Bar }}
+      <form class="nav-item">
+        <input class="form-control" type="search" placeholder="Search for user" aria-label="Search">
+      </form>
 
-            <div id="comments-dialog" class="ui-comments">
-        <form class="form new-comment-form">
-      <div class="form-group">
-        <label for="comment-body">Body:</label>
-        <textarea class="form-input" id="comment-description" name="comment-description"></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary" id="create-button-home">Create</button>
-      </div>
-    </form>       
-      </div>
-        
-        
-    </footer>
+      {{#if logged_in}}
+      {{! Create Post Button }}
+      <button class="btn btn-success btn-lg text-white mx-2 nav-item" id="postButton"><b>+</b></button>
 
-      
-    <!-- Only include the logout script if the user is logged in -->
-    {{#if logged_in}}
-      <script src="/js/logout.js"></script>
-    {{else}}
-      <script src="/js/loginbutton.js"></script>
-    {{/if}}
-    
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+      {{! Login/Logout Button }}
+
+      <button class="btn btn-outline-danger mx-2" id="logout">Logout</button>
+      {{else}}
+      <button class="btn btn-outline-success mx-2" id="login">Login</button>
+      {{/if}}
+    </nav>
+  </header>
+
+  <main class="container container-fluid mt-5">
+    {{{body}}}
+    {{! this is where homepage.handlebars is going }}
+  </main>
+  <footer>
+
+    <div id="dialog" class="ui-dialog">
+      <form class="form new-blog-form">
+        <div class="form-group">
+          <label for="blog-title">Blog Title:</label>
+          <input class="form-input" type="text" id="blog-title" name="blog-title" />
+        </div>
+        <div class="form-group">
+          <label for="blog-description">Body:</label>
+          <textarea class="form-input" id="blog-description" name="blog-description"></textarea>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary" id="create-button-home">Create</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="comments-dialog" class="ui-comments">
+      <form class="form new-comment-form">
+        <div class="form-group">
+          <label for="comment-body">Body:</label>
+          <textarea class="form-input" id="comment-description" name="comment-description"></textarea>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary" id="create-button-home">Create</button>
+        </div>
+      </form>
+    </div>
+
+
+  </footer>
+
+
+  <!-- Only include the logout script if the user is logged in -->
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{else}}
+  <script src="/js/loginbutton.js"></script>
+  {{/if}}
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
   <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
   <script src="/js/navbuttons.js"></script>
   <script src="/js/profile.js"></script>
   <script src="/js/comments.js"></script>
-  </body>
+</body>
 
 </html>
