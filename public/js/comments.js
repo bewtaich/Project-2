@@ -33,7 +33,7 @@ const comments = async (event, req) => {
 }
 
 
-// const commentButton = document.querySelectorAll('.commentButtons')
+const commentButton = document.querySelectorAll('.commentButtons')
 
 // Loop through each button and add a click event listener
 commentButton.forEach(commentButton => {
