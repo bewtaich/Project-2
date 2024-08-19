@@ -1,3 +1,4 @@
+
 const newFormHandler = async (event) => {
   event.preventDefault();
 
@@ -23,26 +24,26 @@ const newFormHandler = async (event) => {
 
 const newCommentHandler = async (event) => {
   event.preventDefault();
-
+  const id = localStorage.getItem(`comment_id`);
   const body = document.querySelector('#comment-description').value.trim();
-  console.log(body);
 
-  if (body) {
-    const response = await fetch(`/api/sub/`, {
-      method: 'POST',
-      body: JSON.stringify({ body }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+  console.log(id)
+    if (body && id) {
+      const response = await fetch(`/api/sub/${id}`, {
+        method: 'POST',
+        body: JSON.stringify({ body }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
 
-    if (response.ok) {
-      document.location.replace('/profile');
-    } else {
-      alert('Failed to create project');
+      if (response.ok) {
+        document.location.replace('/');
+      } else {
+        alert('Failed to create project');
+      }
     }
-  }
-};
+  };
 document
   .querySelector('.new-blog-form')
   .addEventListener('submit', newFormHandler);

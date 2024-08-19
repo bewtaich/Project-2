@@ -26,16 +26,16 @@ $("#comments-dialog").dialog({
 
 const comments = async (event, req) => {
   event.preventDefault();
-
-
+  const id = event.target.getAttribute('data-id');
+  localStorage.setItem(`comment_id`,id);
+  
   // document.location.replace('/')
 }
 
 
 // const commentButton = document.querySelectorAll('.commentButtons')
 
-// // Loop through each button and add a click event listener
-// commentButton.forEach(commentButton => {
-//     commentButton.addEventListener('click', comments);
-//     });
-
+// Loop through each button and add a click event listener
+commentButton.forEach(commentButton => {
+    commentButton.addEventListener('click', comments);
+    });

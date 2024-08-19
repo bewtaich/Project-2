@@ -1,7 +1,12 @@
+<<<<<<< HEAD
 {{#each posts as |blogPostData|}}
+=======
+{{#each posts as |blogPostData| }}
+>>>>>>> 990527e4c2ab6374c0591550f545db1a4ce6a4c0
 
   <div class="card postcard bg-light m-4">
 
+<<<<<<< HEAD
     {{!-- {{#each user as |userData|}} --}}
     <div class="card-header">
       <h3 style="color:black;" class="blogUser">By @{{blogPostData.user.username}}</h3>
@@ -36,4 +41,23 @@
     </div>
 
   </div>
+=======
+  {{!-- {{#each user as |userData|}} --}}
+  <div class="card-header">
+    <h3 style="color:black;">{{blogPostData.user.username}}</h3>
+    {{!-- {{/each}} --}}
+    <h2 style="color:black;">{{blogPostData.title}}</h2>
+  </div>
+  <div class="card-body l-3 px-3">
+    <p style="color:#000000;">{{blogPostData.body}}</p>
+
+    <button class="btn-outline-secondary rounded"><img src="/data/uploads/comment.png" data-id="{{blogPostData.id}}"
+        id="commentButton" class="commentButtons"></button>
+  </div>
+  {{#each Comments as |subComment|}} {{!--Needed to interate through the comments Data. --}}
+  <h5 style="color:#000000;">{{subComment.user.username}}</h5>
+  <h4 style="color:#000000;">{{subComment.body}}</h4>
+  {{/each}}
+</div>
+>>>>>>> 990527e4c2ab6374c0591550f545db1a4ce6a4c0
 {{/each}}

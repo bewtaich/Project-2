@@ -23,35 +23,23 @@
     </form>
   </div>
 
-  {{#if posts.length}}
-  <div class="col-md-6 blog-list">
-    <h3>Current Projects:</h3>
-
-    {{!-- {{#each projects as |project|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
-      </div>
-    </div>
-    {{/each}} --}}
-  </div>
-  {{/if}}
-</div>
-
 
 
 <h2>My Blogs</h2>
-{{#each BlogPosts as |blogPostData| }} 
+{{#each BlogPosts as |blogPostData| }}
 <div class='card postcard bg-light m-4'>
   <div class="card-header">
     <h2>{{blogPostData.title}}</h2>
-  </div>  
+  </div>
   <div class="card-body">
     <p>{{blogPostData.body}}</p>
-    <h3>{{blogPostData.username}}</h3>
-  </div> 
+    <h3>{{blogPostData.user.username}}</h3>
+    <button class="btn-outline-secondary rounded"><img src="/data/uploads/comment.png" data-id="{{blogPostData.id}}"
+        id="commentButton" class="commentButtons"></button>
+  </div>
+  {{#each Comments as |subComment|}} {{!--Needed to interate through the comments Data. --}}
+  <h5 style="color:#000000;">{{subComment.user.username}}</h5>
+  <h4 style="color:#000000;">{{subComment.body}}</h4>
+  {{/each}}
 </div>
 {{/each}}
