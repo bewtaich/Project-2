@@ -113,7 +113,7 @@ body {
     display:none;
 }
 
-#password-login, #password-signup, #blog-title, #blog-description, .ui-dialog-buttonset > button {
+#password-login, #password-signup, #blog-title, #blog-description, #comment-description, .ui-dialog-buttonset > button {
     color: black;
 }
 
