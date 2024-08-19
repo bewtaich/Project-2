@@ -1,48 +1,8 @@
-<<<<<<< HEAD
 {{#each posts as |blogPostData|}}
-=======
-{{#each posts as |blogPostData| }}
->>>>>>> 990527e4c2ab6374c0591550f545db1a4ce6a4c0
 
   <div class="card postcard bg-light m-4">
 
-<<<<<<< HEAD
-    {{!-- {{#each user as |userData|}} --}}
-    <div class="card-header">
-      <h3 style="color:black;" class="blogUser">By @{{blogPostData.user.username}}</h3>
-      {{!-- {{/each}} --}}
-      <h2 style="color:black;" class="blogTitle">{{blogPostData.title}}</h2>
-    </div>
-    <div class="card-body l-3 px-3">
-      {{!-- <p style="color:#000000;" class="blogBody">{{blogPostData.body}}</p> --}}
-      <p style="color:#000000;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque reprehenderit ipsa, modi praesentium unde asperiores fugiat eligendi ducimus magnam nam. Optio consequuntur qui facere voluptas! Aspernatur fuga fugiat ullam incidunt!</p>
-      <button class="btn-outline-secondary rounded"><img
-          src="/data/uploads/comment.png"
-          id="commentButton"
-          class="commentButtons"
-          data-id="{{blogPostData.id}}"
-        /></button>
-
-      <div class="commentsDiv">
-        {{#each Comments as |subComment|}}
-          {{!Needed to interate through the comments Data. }}
-          <div class="singleComment">
-            <h4 style="color:black;" class="commentUser">@Brian</h4>
-            <p style="color:black;" class="commentBody">Comment Lorem ipsum
-              dolor sit amet consectetur adipisicing elit. Adipisci perferendis,
-              explicabo veniam ad incidunt hic cupiditate pariatur ab id
-              expedita itaque corrupti aperiam optio, similique autem cumque
-              impedit blanditiis facere?</p>
-            {{!-- <h5 style="color:#000000;" class="commentUser">@{{subComment.user.username}}</h5>
-  <h4 style="color:#000000;" class="commentBody">{{subComment.body}}</h4> --}}
-          </div>
-        {{/each}}
-      </div>
-    </div>
-
-  </div>
-=======
-  {{!-- {{#each user as |userData|}} --}}
+   {{!-- {{#each user as |userData|}} --}}
   <div class="card-header">
     <h3 style="color:black;">{{blogPostData.user.username}}</h3>
     {{!-- {{/each}} --}}
@@ -59,5 +19,4 @@
   <h4 style="color:#000000;">{{subComment.body}}</h4>
   {{/each}}
 </div>
->>>>>>> 990527e4c2ab6374c0591550f545db1a4ce6a4c0
 {{/each}}
