@@ -10,7 +10,7 @@
     </div>
     <div class="card-body l-3 px-3">
       {{!-- <p style="color:#000000;" class="blogBody">{{blogPostData.body}}</p> --}}
-      <p style="color:#000000;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque reprehenderit ipsa, modi praesentium unde asperiores fugiat eligendi ducimus magnam nam. Optio consequuntur qui facere voluptas! Aspernatur fuga fugiat ullam incidunt!</p>
+      <p style="color:#000000;">{{blogPostData.body}}</p>
       <button class="btn-outline-secondary rounded"><img
           src="/data/uploads/comment.png"
           id="commentButton"
@@ -22,14 +22,8 @@
         {{#each Comments as |subComment|}}
           {{!Needed to interate through the comments Data. }}
           <div class="singleComment">
-            <h4 style="color:black;" class="commentUser">@Brian</h4>
-            <p style="color:black;" class="commentBody">Comment Lorem ipsum
-              dolor sit amet consectetur adipisicing elit. Adipisci perferendis,
-              explicabo veniam ad incidunt hic cupiditate pariatur ab id
-              expedita itaque corrupti aperiam optio, similique autem cumque
-              impedit blanditiis facere?</p>
-            {{!-- <h5 style="color:#000000;" class="commentUser">@{{subComment.user.username}}</h5>
-  <h4 style="color:#000000;" class="commentBody">{{subComment.body}}</h4> --}}
+            <h5 style="color:#000000;" class="commentUser">@{{subComment.user.username}}</h5>
+          <h4 style="color:#000000;" class="commentBody">{{subComment.body}}</h4>
           </div>
         {{/each}}
       </div>
