@@ -5,7 +5,7 @@ For this project, the user is presented with a landing page containing a navigat
 The intent of this application is to provide a place for developers and writers to communicate with each other and share ideas.
 
 
-##User Story
+## User Story
 
 As a blogger, I need a secure place to share my thoughts and ideas, and get feedback on my writing.
 
@@ -14,7 +14,7 @@ As a consumer of creative content, I want to read material that is presented by 
 As a developer and writer, I want to find a place where I can network with other professionals.
 
 
-##Acceptance Criteria
+## Acceptance Criteria
 
 When I navigate to the application, I am presented with the landing page where I can see the most recent blogs posted by other users.
 
@@ -35,14 +35,22 @@ When I click the 'new comment' button, I am presented with a form which appends 
 When I click the logout button, I am signed out of my page and redirected to the landing page.
 
 
-##Screenshots
+## Screenshots
 
-###Coming Soon!
+### Wireframes
+
+![Homepage](/docAssets/Homepage%20Wireframe.png)
+![MobileView](/docAssets/Mobile%20View%20Wireframe.png)
+![Login](/docAssets/Login%20Wireframe.png)
+![Profile](/docAssets/Profile%20Wireframe.png)
+
+### Screenshots Coming Soon!
 
 
-##Deployment
+## Deployment
 
-[BlogSpace]()
+[Repo](https://github.com/bewtaich/Project-2)<br>
+[BlogSpace](https://blogspace-application.onrender.com/)<br>
 
 The application homepage contains a navigation bar and a list of blog posts created by other users. The user is not yet logged in, and some features will not be available at this time. To access more features, the user can click on the 'login' button, which will take them to the login page where both a login form and a signup form exist.
 
@@ -56,15 +64,15 @@ A logout button also exists in the navigation bar, and if the user wants to retu
 
 
 
-##Authors
+## Authors
 
 Brian Taich
 Chris Moore
 Jarvis Washington
-Will (No last name given)
+Will Ziebert
 
 
-##License
+## License
 
 MIT License
 
@@ -89,9 +97,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-##Acknowledgements
+## Acknowledgements
 
-[ReadMe Editor](https://readme.so/editor) 
-CSS Framework: [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+[ReadMe Editor](https://readme.so/editor)<br>
+CSS Framework: [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/)<br>
 [Express Multer Middleware](https://expressjs.com/en/resources/middleware/multer.html)
 
