@@ -26,20 +26,17 @@
 
 
 <h2>My Blogs</h2>
-{{#each BlogPosts as |blogPostData| }}
-<div class='card postcard bg-light m-4'>
+ {{#each BlogPosts as |blogPostData| }}
+<div style="padding:none;" class='card postcardprofile bg-light m-4'>
   <div class="card-header">
-    <h2>{{blogPostData.title}}</h2>
-  </div>
-  <div class="card-body">
-    <p>{{blogPostData.body}}</p>
-    <h3>{{blogPostData.user.username}}</h3>
-    <button class="btn-outline-secondary rounded"><img src="/data/uploads/comment.png" data-id="{{blogPostData.id}}"
-        id="commentButton" class="commentButtons"></button>
-  </div>
-  {{#each Comments as |subComment|}} {{!--Needed to interate through the comments Data. --}}
-  <h5 style="color:#000000;">{{subComment.user.username}}</h5>
-  <h4 style="color:#000000;">{{subComment.body}}</h4>
-  {{/each}}
+      <h3 style="color:black;" class="blogUser">By @{{blogPostData.user.username}}</h3>
+      {{!-- {{/each}} --}}
+      <h2 style="color:black;" class="blogTitle">{{blogPostData.title}}</h2>
+    </div>
+  <div class="card-body l-3 px-3">
+      {{!-- <p style="color:#000000;" class="blogBody">{{blogPostData.body}}</p> --}}
+      <p style="color:#000000;">{{blogPostData.body}}</p>
+    </div>
 </div>
-{{/each}}
+{{/each}} 
+

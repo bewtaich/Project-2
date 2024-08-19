@@ -149,7 +149,7 @@ body {
     margin: 10px;
     overflow-y: scroll;
     height:auto;
-    max-height:200px;
+    max-height:175px;
 }
 
 .singleComment {
@@ -172,4 +172,10 @@ body {
 .commentsDiv::-webkit-scrollbar {
     width: 16px;
   }
+
+.postcardprofile {
+    padding:none !important;
+    min-width: 90%;
+    height:auto;
+}
   
