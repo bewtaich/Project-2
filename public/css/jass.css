@@ -9,6 +9,7 @@
     display: inline-flex;
     height: 450px;
     color:black;
+    overflow: hidden;
 }
 
 .loginbody {
@@ -121,3 +122,54 @@ body {
     background-color: #dc3545;
 }
 
+.postcard {
+    min-width: 90%;
+}
+
+.blogTitle {
+    font-size: 1.7em;
+}
+
+.blogUser {
+    font-size: .8em;
+}
+
+.commentUser {
+    font-size: .9em;
+    text-decoration: underline;
+}
+.commentBody {
+    font-size: .75em;
+}
+.commentsDiv {
+    border-radius: .7em;
+    border:1px solid rgb(141, 141, 141);
+    padding: 10px;
+    background-color: rgb(227, 227, 227);
+    margin: 10px;
+    overflow-y: scroll;
+    height:auto;
+    max-height:200px;
+}
+
+.singleComment {
+    background-color: rgb(219, 184, 247);
+    border-radius: .5em;
+    border:1px solid rgb(164, 137, 186);
+    padding: 5px 15px;
+    margin: 5px;
+    max-height: 100%;
+    background: radial-gradient(circle, rgb(219, 184, 247) 0%, rgb(198, 165, 223) 100%);
+}
+
+.commentsDiv::-webkit-scrollbar-thumb {
+  background-color: rgb(105, 105, 105);
+  border: 4px solid transparent;
+  border-radius: 8px;
+  background-clip: padding-box;  
+}
+
+.commentsDiv::-webkit-scrollbar {
+    width: 16px;
+  }
+  
