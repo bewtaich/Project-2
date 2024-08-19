@@ -16,21 +16,26 @@ $("#comments-dialog").dialog({
     }
   }
   })
-  $('.commentButtons').on("click", function (){
+  
+  $('.commentButtons').on("click", function (event, req){
     dialog.dialog("open")
+    console.log(event.target.getAttribute('data-id'))
+
   })
 });
 
 const comments = async (event, req) => {
   event.preventDefault();
+
+
   // document.location.replace('/')
 }
 
 
-const commentButton = document.querySelectorAll('.commentButtons')
+// const commentButton = document.querySelectorAll('.commentButtons')
 
-// Loop through each button and add a click event listener
-commentButton.forEach(commentButton => {
-    commentButton.addEventListener('click', comments);
-    });
+// // Loop through each button and add a click event listener
+// commentButton.forEach(commentButton => {
+//     commentButton.addEventListener('click', comments);
+//     });
 
