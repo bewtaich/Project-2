@@ -13,14 +13,14 @@ const seedDatabase = async () => {
     individualHooks: true,
     returning: true,
   });
-  await BlogPosts.bulkCreate(blogPostData, {
-    individualHooks: true,
-    returning: true,
-  });
-  await Comments.bulkCreate(commentsData, {
-    individualHooks: true,
-    returning:true,
-  })
+  // await BlogPosts.bulkCreate(blogPostData, {
+  //   individualHooks: true,
+  //   returning: true,
+  // });
+  // await Comments.bulkCreate(commentsData, {
+  //   individualHooks: true,
+  //   returning:true,
+  // })
   process.exit(0);
 };
 

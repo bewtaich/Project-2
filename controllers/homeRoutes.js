@@ -16,9 +16,9 @@ router.get("/", async (req, res) => {
     
     const posts = blogPosts.map((post) => post.get({ plain: true })); //making database data useful for front end.
     const allComments= posts.map((post) => post.Comments);
-    console.log(allComments);
-    console.log(posts);
-    console.log(posts[0].Comments);
+    // console.log(allComments);
+    // console.log(posts);
+    // console.log(posts[0].Comments);
     // const posts2 = posts.map((comment) => comment.get({}));
     
 

@@ -1,46 +1,56 @@
 const newFormHandler = async (event) => {
-    event.preventDefault();
-  
-    const title = document.querySelector('#blog-title').value.trim();
-    const body = document.querySelector('#blog-description').value.trim();
-  
-    if (title && body) {
-      const response = await fetch(`/api/upload`, {
-        method: 'POST',
-        body: JSON.stringify({title, body }),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
+  event.preventDefault();
 
-        if (response.ok) {
-        document.location.replace('/profile');
-        } else {
-        alert('Failed to create project');
-        }
+  const title = document.querySelector('#blog-title').value.trim();
+  const body = document.querySelector('#blog-description').value.trim();
+
+  if (title && body) {
+    const response = await fetch(`/api/upload`, {
+      method: 'POST',
+      body: JSON.stringify({ title, body }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (response.ok) {
+      document.location.replace('/profile');
+    } else {
+      alert('Failed to create project');
     }
-  };
-  
-//   const delButtonHandler = async (event) => {
-//     if (event.target.hasAttribute('data-id')) {
-//       const id = event.target.getAttribute('data-id');
-  
-//       const response = await fetch(`/api/projects/${id}`, {
-//         method: 'DELETE',
-//       });
-  
-//       if (response.ok) {
-//         document.location.replace('/profile');
-//       } else {
-//         alert('Failed to delete project');
-//       }
-//     }
-//   };
-  
-  document
-    .querySelector('.new-blog-form')
-    .addEventListener('submit', newFormHandler);
-  
+  }
+};
+
+const newCommentHandler = async (event) => {
+  event.preventDefault();
+
+  const body = document.querySelector('#comment-description').value.trim();
+  console.log(body);
+
+  if (body) {
+    const response = await fetch(`/api/sub/`, {
+      method: 'POST',
+      body: JSON.stringify({ body }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (response.ok) {
+      document.location.replace('/profile');
+    } else {
+      alert('Failed to create project');
+    }
+  }
+};
+document
+  .querySelector('.new-blog-form')
+  .addEventListener('submit', newFormHandler);
+
+document
+  .querySelector('.new-comment-form')
+  .addEventListener('submit', newCommentHandler);
+
 //   document
 //     .querySelector('.project-list')
 //     .addEventListener('click', delButtonHandler);

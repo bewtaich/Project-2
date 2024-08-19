@@ -15,7 +15,8 @@
     <button class="btn-outline-secondary rounded"><img src="/data/uploads/comment.png" id="commentButton" class="commentButtons" data-id="{{blogPostData.id}}"></button>
   </div>
   {{#each Comments as |subComment|}} {{!--Needed to interate through the comments Data. --}}
-  <h4 style="color:#000000;">{{subComment.body}}</h4>
+  <h5 style="color:#000000;">{{subComment.user.username}}</h5>
+  <h4 style="color:#000000;" >{{subComment.body}}</h4>
   {{/each}}
   </div>
 {{/each}}

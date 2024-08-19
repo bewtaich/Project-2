@@ -17,7 +17,7 @@ Comments.init(
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      unique: true,
+      unique: false,
       references: {
         model: 'user',
         key: 'id',
