@@ -1,16 +1,11 @@
-
-
-
-
 $(document).ready(function () {
     const dialog =
   $("#dialog").dialog({
     autoOpen: false,
     modal: true,
-    minHeight:0.5*(window.innerHeight),
-    minWidth:0.5*(window.innerWidth),
-    maxHeight: 0.8*(window.innerHeight),
-    maxWidth: 0.8*(window.innerWidth),
+    minHeight:0.9*(window.innerHeight),
+    minWidth:0.8*(Math.max(document.documentElement.clientWidth || window.innerWidth)),
+  
     draggable:false,
     buttons: {
       Close: function () {
