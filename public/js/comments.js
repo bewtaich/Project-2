@@ -23,6 +23,9 @@ $("#comments-dialog").dialog({
 
 const comments = async (event, req) => {
   event.preventDefault();
+  const id = event.target.getAttribute('data-id');
+  localStorage.setItem(`comment_id`,id);
+  
   // document.location.replace('/')
 }
 
@@ -33,4 +36,3 @@ const commentButton = document.querySelectorAll('.commentButtons')
 commentButton.forEach(commentButton => {
     commentButton.addEventListener('click', comments);
     });
-
